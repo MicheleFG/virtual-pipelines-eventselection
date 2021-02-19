@@ -63,7 +63,7 @@ jobs:
           name: histograms
           path: |
             skim_ggH.root
-            skim_ggH.loghist_ggH.root
+            skim_ggH.log
 
   test:
     needs: plot
