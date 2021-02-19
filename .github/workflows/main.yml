@@ -56,12 +56,14 @@ jobs:
           name: skim_ggH
 
       - name: make_plots
-        run: python histograms.py skim_ggH.root ggH hist_ggH.root
+        run: python histograms.py skim_ggH.root ggH hist_ggH.root > skim_ggH.log
        
       - uses: actions/upload-artifact@v2
         with:
           name: histograms
-          path: hist_ggH.root
+          path: |
+            skim_ggH.root
+            skim_ggH.loghist_ggH.root
 
   test:
     needs: plot
